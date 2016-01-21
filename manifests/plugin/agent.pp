@@ -29,6 +29,6 @@ define mcollective::plugin::agent(
   package { "mcollective-${name}-agent":
     ensure  => $version,
     require => [ Package[$mcollective::server::package], $dependencies],
-    notify  => Service[ $mcollective::service_name ],
+    notify  => Service[ $mcollective::server::service],
   }
 }
